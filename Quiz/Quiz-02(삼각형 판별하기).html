@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>퀴즈-02</title>
+    </head>
+    <body>
+        <script>
+            function solution(a, b, c){
+                let answer;
+                let biggestNum;
+                if(a > b) biggestNum = a;
+                else biggestNum = b;
+                if(biggestNum < c) biggestNum = c;
+
+                if((a + b + c) - (biggestNum * 2) < 0) answer = "No";
+                else answer = "Yes";
+
+                return answer;
+            }
+
+            console.log(solution(6, 7, 11));  //출력값 : yes
+            console.log(solution(13, 33, 17));  //출력값 : no
+        </script>
+    </body>
+</html>
