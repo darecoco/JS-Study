@@ -11,7 +11,8 @@
                 else biggestNum = b;
                 if(biggestNum < c) biggestNum = c;
 
-                if((a + b + c) - (biggestNum * 2) < 0) answer = "No";
+                //쌤버전 : a + b + c - biggestNum <= bigestNum
+                if((a + b + c) - (biggestNum * 2) <= 0) answer = "No"; 
                 else answer = "Yes";
 
                 return answer;
@@ -19,6 +20,7 @@
 
             console.log(solution(6, 7, 11));  //출력값 : yes
             console.log(solution(13, 33, 17));  //출력값 : no
+            console.log(solution(3, 2, 1)); //출력값 : no
         </script>
     </body>
 </html>
