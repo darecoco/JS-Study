@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>연필 다스</title>
+    </head>
+    <body>
+        <script>
+            function solution(student){
+                // const das = 12;
+                // let answer = 0;
+                // if((student % das) > 0){
+                //     answer++;
+                // }
+                // answer += student / das;
+                let answer = Math.ceil(student/12);
+                return answer;
+            }
+
+            var ex1 = 25;
+            var ex2 = 178;
+
+            //ceil() : 무조건 올림
+            //round() : 반올림
+            //floor() : 무조건 내림
+
+            console.log(solution(ex1));
+            console.log(solution(ex2));
+        </script>
+    </body>
+</html>
