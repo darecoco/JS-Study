@@ -87,12 +87,12 @@
             // console.log(points.reverse()); //거꾸로 출력
             
             //object정렬
-            var persons = [
-                {name : "유재석", point:78},
-                {name : "김종국", point:92},
-                {name : "양세찬", point:76},
-                {name : "하 하", point:82}
-            ];
+            // var persons = [
+            //     {name : "유재석", point:78},
+            //     {name : "김종국", point:92},
+            //     {name : "양세찬", point:76},
+            //     {name : "하 하", point:82}
+            // ];
 
             //console.log(persons.sort());
             // persons.sort(function(a, b) {
@@ -103,11 +103,58 @@
             // console.log(persons.sort());
 
             //삼항연산자
-            persons.sort(function(a,b){
-                return (a.point > b.point) ? 1 : (a.point < b.point) ? -1 : 0 ;
-            });
+            // persons.sort(function(a,b){
+            //     return (a.point > b.point) ? 1 : (a.point < b.point) ? -1 : 0 ;
+            // });
+            // console.log(person.sort());
 
-            console.log(persons.sort());
+            // filter : 조건에 맞는 배열만 반환 !중요!
+            // var pass = persons.filter(function(per){
+            //     return per.point > 80;
+            // });
+            // console.log(pass);
+
+            // var persons = [
+            //     {name : "유재석", point:78, city : "서울"},
+            //     {name : "김종국", point:92, city : "대구"},
+            //     {name : "양세찬", point:76, city : "서울"},
+            //     {name : "하 하", point:82, city : "제주"}
+            // ];
+            // var jeju = persons.filter(function(per){
+            //     return per.city === "제주";
+            // });
+            // console.log(jeju);
+
+            //filter()를 for문으로 구현
+            // var jeju = [];
+            // for(var i = 0; i < persons.length; i++){
+            //     if(persons[i].city === "제주"){
+            //         jeju.push(persons[i]);
+            //     }
+            // }
+            // console.log(jeju);
+
+            //reduce !중요!
+            //reduce(i, j) i : accumulator(누산기/누적 + 계산기), j : currentValue
+            // var arr4 = [1,2,3,4,5];
+            // var total = arr4.reduce(function(a, c){
+            //     return a + c;
+            // });
+            // console.log(total);
+
+            //map : filter와는 다른 형태로 새로운 배열을 생성  !중요!
+            var userList = [
+                {firstName: "재석", lastName:"유", email:"yu@email.com"},
+                {firstName: "종국", lastName:"김", email:"kim@email.com"},
+                {firstName: "세찬", lastName:"양", email:"yang@email.com"},
+                {firstName: "석진", lastName:"지", email:"ji@email.com"},
+            ];
+
+            var userList2 = userList.map(function(user) {
+                return {fullName:"런닝맨 맴버 : " + user.lastName + user.firstName}
+            });
+            console.log(userList2)
+            
         </script>
     </body>
 </html>
