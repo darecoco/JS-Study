@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>JOSN 객체</title>
+    </head>
+    <body>
+        <script>
+            //데이터를 저장하고 전송하기 위한 데이터 포멧
+            //서버에서 웹 페이지(웹페이지 -> 서버)로 데이터를 전송할 때 사용 (f12->network,2번째)
+            //JSON : JavaScript Object Notation의 약자
+            //json의 기본 형태
+            var data={
+                "employees" : [
+                    {"fristName":"길동", "lastName":"홍"},
+                    {"fristName":"길순", "lastName":"제갈"},
+                    {"fristName":"철수", "lastName":"김"}
+                ]
+            }
+            // console.log(data);
+            // JOSN.stringify = object를 string으로 변환하여 출력
+            // console.log(JSON.stringify(data));
+
+            // JOSN.parse = string을 object로 변환하여 출력
+            var text = '{"employees" : [' +
+            '{"firstName":"길동", "lastName":"홍"}, ' +
+            '{"firstName":"길순", "lastName":"제갈"}, ' +
+            '{"firstName":"철수", "lastName":"김"} ]}';
+
+            console.log(text);
+            console.log(JSON.parse(text))
+        </script>
+    </body>
+</html>
