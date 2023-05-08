@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>window 객체</title>
+    </head>
+    <body>
+        <script>
+            console.log(window);
+            // window.alert("이것은 대화창 입니다.");
+            // alert("이것은 대화창 입니다."); //window는 생략가능
+
+            // var yn = confirm("정말로 삭제하시겠습니까?");
+            // console.log(yn); //true, false
+
+            // if(confirm("정말로 삭제하실렴니까?")){
+            //     //삭제 로직 실행
+            //     console.log("삭제 실행")
+            // }
+
+            // var pw = prompt("나를 여는 비밀번호를 입력해줘");
+            // // console.log(pw)
+            // if(pw === null){
+            //     console.log("취소 선택");
+            // }else if(pw === ""){
+            //     console.log("확인 선택");
+            // }else if(pw !== ""){
+            //     console.log(pw);
+            // }
+
+            // window.open("https://naver.com");
+            // window.print();
+
+            //setTimeout
+            // setTimeout(function() {
+            //     //alert("김현지 바보");
+            //     console.log("3초후에 프로그램이 실행됩니다.");
+            // }, 3000) //3000만큼. 즉, 3초만큼 딜레이 후 code실행
+
+            //setInterval
+            // var i = 0;
+            // setInterval(function(){
+            //     console.log("1초 마다 프로그램 호출 : " + i);
+            //     i++;
+            // }, 1000) //1초마다 코드 실행
+
+            var i = 0;
+            var fnc = setInterval(function(){
+                console.log("1초 마다 프로그램 호출 : " + i);
+                if(i === 5){
+                    clearInterval(fnc);
+                }
+                i++;
+            }, 1000) //1초마다 코드 실행
+        </script>
+    </body>
+</html>
