@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>최솟값 구하기</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+                //첫 번째 방법 : for문을 이용.
+
+                //쌤.ver
+                let answer2, min = Number.MAX_SAFE_INTEGER; //JS에서 지원해주는 정수 최대값
+                //나.ver
+                let answer = arr[0]; //이리 해도 됨
+
+                for(var i of arr){
+                    if(answer > i)
+                        answer = i;
+                }
+                return answer;               
+            }
+
+            let arr=[5,7,1,3,2,9,11];
+            console.log(solution(arr));
+            //두 번째 방법 : 내장함수를 이용
+            console.log(MAth.min(...arr)); //그냥 arr로 쓰면 Object로 인식하여 함수를 실행할 때 에러가 나지만
+            //앞에 '...'을 쓰면 arr[0], arr[1], arr[2]...이 된다.
+
+            // 보너스 문제 : 최댓값 출력
+            console.log(Math.max(...arr));
+            colsole.log(2)
+        </script>
+    </body>
+</html>
