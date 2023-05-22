@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>this 키워드</title>
+    </head>
+    <body>
+        <button onclick="this.style.backgroundColor='red'">버튼이올세</button>
+        <button onclick="callFunc(this)">버튼이올세2</button>
+        <select onchange="changeSelect(this)">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+
+
+        <script>
+            function changeSelect(obj2){
+                console.log(obj2);
+                console.log(obj2.value);
+            }
+
+            function callFunc(obj1){
+                //alert("그렇소. 누름단추이오.");
+                console.log(obj1);
+            }
+            //console.log(this);  //함수 밖 this : Window 객체 가리킴
+            // alert("냠념뇸");
+
+            // var person = {
+            //     firstname : "길동",
+            //     lastname : "홍",
+            //     fullName : function(){
+            //         return this.firstname + " " + this.lastname;
+            //     }
+            // }
+            // console.log(person.fullName());
+
+            // function myFunction(){
+            //     console.log(this);  //함수 내 this : 속해있는 함수를 가리킴
+            // }
+            // myFunction();
+
+            function test(){
+
+            }
+        </script>
+    </body>
+</html>
