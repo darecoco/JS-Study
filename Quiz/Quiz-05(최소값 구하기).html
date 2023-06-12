@@ -13,21 +13,21 @@
                 let answer = arr[0]; //이리 해도 됨
 
                 for(var i of arr){
-                    if(answer > i)
-                        answer = i;
+                    if(answer2 > i)
+                        answer2 = i;
                 }
-                return answer;               
+                return answer2;               
             }
 
             let arr=[5,7,1,3,2,9,11];
             console.log(solution(arr));
             //두 번째 방법 : 내장함수를 이용
-            console.log(MAth.min(...arr)); //그냥 arr로 쓰면 Object로 인식하여 함수를 실행할 때 에러가 나지만
+            console.log(Math.min(...arr)); //그냥 arr로 쓰면 Object로 인식하여 함수를 실행할 때 에러가 나지만
             //앞에 '...'을 쓰면 arr[0], arr[1], arr[2]...이 된다.
 
             // 보너스 문제 : 최댓값 출력
             console.log(Math.max(...arr));
-            colsole.log(2)
+            console.log(2)
         </script>
     </body>
 </html>
