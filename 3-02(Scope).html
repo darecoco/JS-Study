@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Scope</title>
+    </head>
+    <body>
+        <script>
+            function myFunction(){
+                //local Scope : 지역변수
+                var carName1 = "현대자동차";
+                console.log(carName1);
+            }
+            myFunction();
+
+            //console.log(carName1); Uncaught ReferenceError: carName1 is not defined
+
+            //global Scope : 전역변수
+            // var carName2 = "기아자동차";
+
+            // function myFunction2(){
+            //     console.log(carName2);
+            // }
+            // myFunction2(); // 미리 컴파일 된 파일을 갖고 있으므로 미리 써도 괜찮다.
+
+            //myFunction3()
+            //function myFunction3 {}
+            var myFunction3 = function(){
+                console.log("myFunction3 호출");
+            }
+            myFunction3(); // 변수에다가 담았기 때문에 먼저 호출하면 에러가 난다.
+        </script>
+        스코프(Scope)란? 그러게.. 뭘까...
+    </body>
+</html>
