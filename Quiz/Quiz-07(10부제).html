@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            function solution(d, c){
+                let answer = 0;
+                for(var i of c){
+                    if(d === (i %= 10)) answer++;
+                }
+                return answer;
+            }
+
+            var day = 3, cars = [25, 23, 11, 47, 53, 17, 33];
+            console.log(solution(day, cars));
+        </script>
+    </body>
+</html>
