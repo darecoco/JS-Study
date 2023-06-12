@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                let answer = "";
+                //쌤 버전(나는 replace까지 밖에 생각 못 함.)
+                return answer = s.replace(/A/g, "#");
+
+                /* 내가 처음에 생각했던 것(자료구조에 익숙한..)
+                for(let i of s){
+                    if(i === "A") answer += "#";
+                    else answer += i;
+                }
+                */
+            }
+
+            let str = "BANANA";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
