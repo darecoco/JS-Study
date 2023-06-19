@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Arrow Function</title>
+    </head>
+    <body>
+        <script>
+            // hello1(); //function은 미리 컴파일 되서 앞에다 써도 됨.
+            // function hello1() {
+            //     console.log("Hello World1");
+            // }
+
+            // var hello2 = function(){
+            //     console.log("Hellow World2");
+            // }
+            // hello2(); //근데 변수에다 선언하면 순차적으로 컴파일 되기 때문에 앞에다 쓰면 안 됨.
+
+            //arrow function
+            // var hello3 = () => {
+            //     console.log("Hello World3");
+            //     return "Hello World3";
+            // }
+            // console.log(hello3);
+
+            // var hello4 = () => "Hello World4";
+
+            //위 코드와 동일
+            // var hello4 = function(){
+            //     return "Hello World4";
+            // }
+
+            // var str = hello4;
+            // console.log(hello4);
+
+            // 함수 호출시 메개변수를 전달하는 경우
+            // var hello5 = (fullName) => "Hello5 " + fullName;
+
+            // 메개변수가 하나일 경우 생략 가능
+            // var hello5 = fullName => "Hello5 " + fullName;
+            // console.log(hello5("홍길동"));
+
+            var hello6 = (fullName, lastName) => "Hello6 " + fullName + " " + lastName;
+            console.log(hello6("길동","홍"));
+        </script>
+    </body>
+</html>
