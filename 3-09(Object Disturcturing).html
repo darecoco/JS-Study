@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            function getPerson(){
+                return{
+                    firstName:"길동",
+                    lastName:"홍",
+                    age:"23",
+                    city:"Seoul",
+                    countgy:"Chosun"
+                }
+            }
+
+            // var person = getPerson();
+            // console.log(person);
+            // console.log(person.firstName);
+            // console.log(person.lastName);
+
+            var {firstName, lastName} = getPerson();
+            console.log(firstName);
+        </script>
+    </body>
+</html>
