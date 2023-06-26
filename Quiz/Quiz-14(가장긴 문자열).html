@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>가장 긴 문자열출력</title>
+    </head>
+    <body>
+        <script>
+            function solution(str){
+                let answer=str[0];
+                for(let i of str){
+                    if(answer.length < i.length) answer = i;
+                }
+                return answer;
+            }
+            let str = ["teacher", "time", "student", "beautiful", "good"];
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
