@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            function solution(str){
+                let answer = 0;
+                //방법1. toUpperCase()사용
+                for(let i of str){
+                    // if (str.search(/'A' + i/g) !== -1) //실패한 흔적...
+                    //     answer++;
+                    if(i === i.toUpperCase()) answer++;
+                }
+                //return answer;
+
+                //방법2. ASCII사용
+                for(let x of str){
+                    let num = x.charCodeAt();//ASCII code로 변환
+                    if(num>=65 && num<=90) answer++;
+                }
+                return answer;
+            }
+            let str = "KoreaTimeGood";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
