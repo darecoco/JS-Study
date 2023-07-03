@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>가운데 문자 출력하기</title>
+    </head>
+    <body>
+        <script>
+            function solution(str){
+                let res = "";
+                var mid = Math.floor(str.length/2);
+                //방법1. substr
+                if(str.length%2 === 0) res = str.substr(mid-1, 2);
+                else res = str.substr(mid, 1);
+
+                //방법2. substring
+                let res2 = "";
+                if(str.length%2 === 0) res2 = str.substring(mid-1, mid+1);
+                else res2 = str.substring(mid, mid+1);
+
+                return res2;
+            }
+//substring(인덱스, 처음부터의 글자수....인덱스-1)
+//substr(인덱스, 시작 위치부터의 글자수)
+            console.log(solution("study"));
+            console.log(solution("good"));
+            console.log(solution("length"));
+            console.log(solution("computers"));
+        </script>
+    </body>
+</html>
