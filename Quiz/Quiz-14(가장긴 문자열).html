@@ -5,13 +5,13 @@
     <body>
         <script>
             function solution(str){
-                let answer=str[0];
+                let answer="";
                 for(let i of str){
                     if(answer.length < i.length) answer = i;
                 }
                 return answer;
             }
-            let str = ["teacher", "time", "student", "beautiful", "good"];
+            let str = ["teacher", "time", "student", "beautiful", "good", "computer programming"];
             console.log(solution(str));
         </script>
     </body>
