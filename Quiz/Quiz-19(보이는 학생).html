@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>보이는 학생</title>
+    </head>
+    <body>
+        <script>
+            function solution(height){
+                let result = 1;
+                let max = height[0];
+                for(let i = 1; i < height.length; i++){
+                    if(height[i] > max){
+                        max = height[i];
+                        result++;
+                    }
+                }
+                return result;
+            }
+            let height = [130, 151, 148, 140, 150, 153];
+            console.log(solution(height));
+        </script>
+    </body>
+</html>
