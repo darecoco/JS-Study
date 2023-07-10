@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>중복 문자 제거</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                let res = "";
+                // 타임오버!
+                // let differ = s.charAt(0);
+                // let num = [];
+                // for(let i of s){
+                //     if(differ !== i){
+                //         differ = i;
+                //         num.add(indexOf(differ));
+                //     }
+                // }
+
+                // 쌤버전1
+                for(let j=0; j< s.length; j++){
+                    if(j === s.indexOf(s[j]))
+                        res += s[j];
+                    else
+                        continue;
+                }
+
+                // 특정 문자의 객수를 출력
+                let result = 0;
+                let pos = s.indexOf('s');
+                while(pos !== -1){
+                    result++;
+                    pos = s.indexOf('s', pos+1);
+                }
+                return result;
+            }
+
+            console.log(solution("ksekkset"));
+            console.log(solution("good"));
+
+        </script>
+    </body>
+</html>
