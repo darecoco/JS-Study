@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            function solution(str){
+                let result = [];
+                //내 버전
+                for(let i = 0; i < 5; i++){
+                    if( i === str.indexOf(str[i]))
+                        result.push(str[i]);
+                    else
+                        continue;
+                }
+                //return result;
+
+                //쌤 버전
+                result = str.filter(function(v, i){
+                    if(str.indexOf(v) === i){
+                        return true;
+                    }
+                    return str.indexOf(v) === i;
+                });
+                //return result;
+
+                //arrow function 사용
+                result = str.filter((v, i) => str.indexOf(v) === i);
+                return result;
+            }
+            let str = ["good", "time", "good", "time", "student"];
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
