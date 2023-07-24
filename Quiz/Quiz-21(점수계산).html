@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>점수계산</title>
+    </head>
+    <body>
+        <script>
+            function solution(scores){
+                let sum_score=0, add_score=0;
+                for(let i of scores){
+                    if(i)
+                        sum_score += ++add_score;
+                    else
+                        add_score = 0;
+                }
+                return sum_score;
+            }
+
+            let scores = [1, 0, 1, 1, 1, 0, 0, 1, 1, 0];
+            console.log(solution(scores));
+        </script>
+    </body>
+</html>
