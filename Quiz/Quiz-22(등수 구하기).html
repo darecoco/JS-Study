@@ -5,7 +5,7 @@
     <body>
         <script>
             function solution(scores){
-                let result = [1,1,1,1,1];
+                let result = Array.from({length:scores.length}, () => 1); // length:n에서 n의 길이까지 1의 값을 넣고 초기화
                 for(let i in scores){
                     for(let j in scores){
                         if(scores[i] > scores[j] && i !== j)
