@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>등수 구하기</title>
+    </head>
+    <body>
+        <script>
+            function solution(scores){
+                let result = [1,1,1,1,1];
+                for(let i in scores){
+                    for(let j in scores){
+                        if(scores[i] > scores[j] && i !== j)
+                            result[j]++;
+                    }
+                }
+                return result;
+            }
+
+            let scores = [87, 89, 92, 100, 76];
+            console.log(solution(scores));
+        </script>
+    </body>
+</html>
