@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+                // 내 버전
+                let result = 0;
+                let sum_arr = [];
+                let arrs = 0;
+                for(var i = 0; i < arr.length * 2 + 2; i++){
+                    sum_arr.push(0);
+                }
+
+                //행, 열
+                for(var i = 0; i < arr.length; i++){
+                    for(var j = 0; j < arr.length; j++){
+                        sum_arr[j] += arr[i][j];
+                        sum_arr[i + arr.length] += arr[j][i];
+                    }
+                }
+
+                //대각선
+                for(let i = 0; i < arr.length; i++){
+                    sum_arr[-1] += arr[i][i];
+                    sum_arr[-2] += arr[i][arr.length-i-1];
+                }
+                result = Math.max(...sum_arr);
+
+                //쌤버전
+                let sum1 = 0; // 행의 합
+                let sum2 = 0; // 열의 합
+                let answer = Number.MIN_SAFE_INTEGER;
+
+                for(var i = 0; i <arr.length; i++){
+                    sum1 = 0;
+                    sum2 = 0;
+                    for(var j = 0; j < arr.length; j++){
+                        sum1 += arr[i][j];
+                        sum2 += arr[j][i];
+                    }
+                    answer = Math.max(answer, sum1, sum2);
+                }
+
+                sum1 = sum2 = 0;
+                for(let i = 0; i < arr.length; i++){
+                    sum1 += arr[i][i];
+                    sum2 += arr[i][arr.length-i-1];
+                }
+                answer = Math.max(answer, sum1, sum2);
+
+                return result;
+            }
+
+            let example = [
+                [10, 12, 10, 12, 15],
+                [12, 39, 30, 23, 11],
+                [11, 25, 50, 53, 15],
+                [19, 27, 29, 37, 27],
+                [19, 13, 30, 13, 19]
+            ];
+
+            console.log(solution(example));
+            
+        </script>
+    </body>
+</html>
