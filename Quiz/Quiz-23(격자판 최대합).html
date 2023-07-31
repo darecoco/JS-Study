@@ -16,7 +16,7 @@
                 //행, 열
                 for(var i = 0; i < arr.length; i++){
                     for(var j = 0; j < arr.length; j++){
-                        sum_arr[j] += arr[i][j];
+                        sum_arr[i] += arr[i][j];
                         sum_arr[i + arr.length] += arr[j][i];
                     }
                 }
