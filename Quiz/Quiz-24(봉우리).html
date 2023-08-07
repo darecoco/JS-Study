@@ -1,0 +1,31 @@
+<head>
+    <title>봉우리</title>
+</head>
+<body>
+    <script>
+        function solution(map){
+            let result = 0;
+            for(let i = 1; i < map.length - 1; i++){
+                for(let j = 1; j < map.length -1; j++){
+                    var up = map[i+1][j], down = map[i-1][j], left = map[i][j-1], right = map[i][j+1], here = map[i][j];
+                    if(here > up && here > right && here > down && here > left){
+                        result++;
+                    }
+                }
+            }
+            return result;
+        }
+
+        let arr = [
+            [0,0,0,0,0,0,0],
+            [0,5,3,7,2,3,0],
+            [0,3,7,1,6,1,0],
+            [0,7,2,5,3,4,0],
+            [0,4,3,6,4,1,0],
+            [0,8,7,3,5,2,0],
+            [0,0,0,0,0,0,0]
+        ]
+        console.log(solution(arr));
+    </script>
+</body>
+</html>
