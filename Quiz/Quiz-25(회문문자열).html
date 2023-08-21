@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            function solution(str){
+                //내 방식
+                let answer="YES";
+                str = str.toLowerCase();
+                for(let ch in str){
+                    if((ch <= (str.length - 1)/2) & (str[ch] !== str[str.length - ch - 1])){
+                        answer = "NO";
+                        break;
+                    }
+                }
+                return answer;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                //쌤 방식
+                let answer2 = "Yes";
+                str = str.toLowerCase();
+
+                //방법1. 직접 비교
+                let len = str.length;
+                for(let i = 0; i < len/2; i++){
+                    if(str[0]!==str[len-i-1]) return answer = "NO";
+                }
+
+                //방법2. reverse()함수 사용
+                if(str!==str.split('').reverse().join()) answer = "NO";
+
+                return answer;
+            }
+            let str1 = "gooG";
+            let str2 = "StudEn1";
+            console.log(solution(str1));
+            console.log(solution(str2));
+        </script>
+    </body>
+</html>
