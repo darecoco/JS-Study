@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            function solution(str){
+                let answer="";
+                // str = str.replace(/[^0-9]/g, ''); //정규표현식
+                // answer = Number(str);
+
+                for(let num of str){
+                    if(num >= '0' & num <= '9')
+                        answer += num;
+                }
+
+                return Number(answer);
+            }
+            let str1 = "0 fodsa 0 fdsja 2 fjkdlsa 9 klj 0 dal 3";
+            console.log(solution(str1));
+        </script>
+    </body>
+</html>
