@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            function solution(str){
+                //쌤 방식
+                let answer="YES";
+                str = str.toLowerCase().replace(/[^a-z]/g, ''); //정규표현식
+
+                if(str!==str.split('').reverse().join()) answer = "NO";
+
+                return answer;
+            }
+            let str1 = "Found93, Time*(), STUDY 33 ydUTs, Emit@!~ DnuOf";
+            let str2 = "StudEn1";
+            console.log(solution(str1));
+            console.log(solution(str2));
+        </script>
+    </body>
+</html>
