@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            function solution(str){
+                let answer = str[0];
+                let cnt = 1;
+                for(let x = 1; x < str.length; x++ ){
+                    if(str[x]===str[x-1]){
+                        cnt++;
+                    }else if(cnt !== 1){
+                        answer += cnt.toString();
+                        answer += str[x];
+                        cnt = 1;
+                    }else{
+                        answer += str[x];
+                        cnt = 1;
+                    }
+                }
+                return answer;
+
+                //쌤버전
+                let answer2 = "";
+                let cnt2 = 1;
+                str = str + " ";
+                for(let i=0; i < str.length-1; i++){
+                    if(str[i] === str[i-1]) cnt++;
+                    else{
+                        answer2 += str[i];
+                        if(cnt>1){
+                            answer2 += String(cnt);
+                        }
+                        cnt = 1;
+                    }
+                }
+
+                return answer2;
+            }
+
+            let str = "KKHSSSSSSSE"
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
