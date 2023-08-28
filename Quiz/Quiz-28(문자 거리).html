@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            function solution(str, char){
+                // let cnt=0, distance=0;
+                // let pattern = new RegExp(`${char}`, 'g');
+                // let string = str.replace(pattern, '0');
+                // for(let a of str){
+                //     //cnt는 숫자
+                //     // distance는 숫자를 진행하며 0을 만나면 값--만큼 뒤로 돌아가서 빼기
+                // }
+
+                //쌤 버전
+                let p = Number.MAX_SAFE_INTEGER;
+                let answer = [];
+                for(let x of str){
+                    if(x===char){
+                        p=0;
+                        answer.push(p);
+                    }else{
+                        p++;
+                        answer.push(p);
+                    }
+                }
+                //오른쪽 부터 거리의 크기를 구한뒤, 왼쪽보다 작은 값이면 answer 배열의 값을 변경
+                p=Number.MAX_SAFE_INTEGER;
+                for(let i=(str.length-1); i>=0; i--){
+                    if(str[i]==char){
+                        p=0;
+                    }else{
+                        p++;
+                        answer[i] = Math.min(answer[i], p);
+                    }
+                }
+
+                return answer;
+            }
+
+            let arr = "teachermode";
+            let text = 'e';
+            console.log(solution(arr, text));
+        </script>
+    </body>
+</html>
