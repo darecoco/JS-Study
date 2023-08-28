@@ -6,15 +6,33 @@
         <script>
             function solution(str){
                 let answer="";
+                let answer2 = 0;
                 // str = str.replace(/[^0-9]/g, ''); //정규표현식
                 // answer = Number(str);
 
                 for(let num of str){
-                    if(num >= '0' & num <= '9')
+                    // if(num >= '0' & num <= '9')
+                    //     answer += num;
+
+                    //쌤버전
+                    if(!isNaN(x)){
                         answer += num;
+                    }
                 }
 
-                return Number(answer);
+                //return Number(answer);
+
+                //쌤버전
+                return parseInt(answer);
+
+                //parseInt() 사용금지
+                for(let x of str){
+                    if(!isNaN(x)){
+                        answer2 = (answer2*10) + Number(x);
+                    }
+                }
+
+                return answer;
             }
             let str1 = "0 fodsa 0 fdsja 2 fjkdlsa 9 klj 0 dal 3";
             console.log(solution(str1));
