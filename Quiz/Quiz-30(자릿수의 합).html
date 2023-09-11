@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+                let result = 0;
+                let temp = [];
+                for(let i=0; i<arr.length; i++){
+                    var just = arr[i].toString(10);
+                    temp.push(0);
+                    for(let j of just){
+                        temp[i] += Number.parseInt(j);
+                    }
+                }
+                var num = arr[0];
+                for(let i=1; i<temp.length; i++){
+                    if(temp[i-1] < temp[i] && num < arr[i]){
+                        result = temp[i];
+                        num = arr[i];
+                    }
+                }
+                // return result;
+
+                //쌤버전
+                let answer = 0;
+                let sum=0;
+                //방법1 while문 이용
+                // while(tmp){
+                //     sum+= (tmp%10);
+                //     tmp = Math.floor(tmp/10);
+                // }
+
+                //방법2 내장함수 사용
+                sum = arr.toString().split('').reduce((a,b) => a + Number(b), 0);
+
+                if(sum >= max){
+                    max = sum;
+                    answer = x;
+                }else if(sum === max){
+                    if(x>answer) answer = x;
+                }
+
+                return answer;
+            }
+
+            let nums = [7, 460, 128, 603, 40, 521, 137, 123, 1200];
+            console.log(solution(nums));
+        </script>
+    </body>
+</html>
