@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Element 컨트롤</title>
+</head>
+<body>
+    Text: <br>
+    <input type="text" value = "아무거나 써 보세요." id="text1"> <br>
+    관심사:<br>
+    <input type="checkbox" name="chk_interest" value="it">IT/컴퓨터
+    <input type="checkbox" name="chk_interest" value="entertainment">엔터테인먼트
+    <input type="checkbox" name="chk_interest" value="sports">스포츠
+    <input type="checkbox" name="chk_interest" value="shoping">쇼핑
+    <input type="checkbox" name="chk_interest" value="book">도서/책
+    <br>
+    <input type="radio" name="email" value="Y" checked>동의
+    <input type="radio" name="email" value="N" >거부
+    <br>
+    <select id="select1">
+        <option value="KO">Korea</option>
+        <option value="JP">Japan</option>
+        <option value="CN">China</option>
+    </select><br>
+    <div id="div_txt"><h1>[div] 태그 사용됨</h1></div>
+    <input type="button" value="저장" onclick="doSave()">
+    <script>
+        function doSave(){
+            // var txt1 = document.getElementById("text1");
+            // console.log(txt1);
+            // console.log(txt1.value);
+            // // alert("저장되었습니다.");
+            
+            // //jQuery 방식
+            // var txt2 = document.querySelector("#text1");
+            // console.log(txt2);
+            // console.log(txt2.value);
+
+            // var txt3 = document.getElementById("text1");
+            // var txt3_value = txt3.value;
+            // console.log(txt3_value);
+
+            // var check_box1 = document.getElementByName("chk_interest");
+            // console.log(check_box1);
+            // for(var i=0; i<check_box1.length; i++){
+            //     if(check_box1[i].checked){
+            //         console.log(check_box1);
+            //     }
+            // }
+
+            // //jQuery 방식
+            // var check_box2 = document.querySelectorAll("[name = chk_interest]:checked");
+            // console.log(check_box2);
+
+            // var radio = document.querySelector("[name = email]:checked");
+            // console.log(radio);
+
+            var select = document.getElementById("select1");
+            console.log(select);
+
+            var div_txt = document.getElementById("div_txt");
+            console.log(div_txt);
+
+            var div_txt2 = document.getElementById("div_txt").innerText;
+            console.log(div_txt2);
+
+            console.log(document.getElementsByTagName("div"));
+        }
+    </script>
+</body>
+</html>
