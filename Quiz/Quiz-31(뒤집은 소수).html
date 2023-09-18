@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>뒤집은 소수</title>
+    </head>
+    <body>
+        <script>
+            function solution(nums){
+                //내 방식
+                var renum = 0;
+                var ft = false
+                
+                for(var num of nums){
+                    renum = reverseNum(num);
+                    if(renum === 1){
+                        continue;
+                    }
+                    for(var i = 2; i < renum; i++){
+                        if(renum%i === 0){
+                            ft = true;
+                            break;
+                        }
+                    }
+                    if(ft){
+                        ft = false;
+                        continue;
+                    }
+                    console.log(renum)
+                }
+
+                //쌤 방식 1(내장함수 없이)
+                let answer = [];
+                for(let x of nums){
+                    let res = 0;
+                    while(x){
+                        let t = x%10;
+                        res = res*10+t;
+                        x = parseInt(x/10);
+                    }
+
+                    if(isPrime(res)){
+                        answer.push(res);
+                    }
+                }
+                return answer;
+
+                //쌤 방식 2(내장함수 씀)
+                let answer2 = [];
+                for(let x of arr){
+                    let res2 = Number(x.toString().split('').reverse().join());
+                    if(isPrime(res2)){
+                        answer2.push(res2);
+                    }
+                }
+                return answer2;
+
+            }
+
+            //내 방식에서 쓰인 함수
+            function reverseNum(num){
+                var result = [...num.toString()].reverse().join("");
+                result = Number(result);
+                return result;
+            }
+
+            //쌤 방식에서 쓰인 함수
+            function isPrime(){
+                if(num===1) return false;
+                for(let i=2; i<num; i++){
+                    if(num%i === 0) return false;
+                }
+                return true;
+            }
+
+            let nums = [32, 55, 62,20, 250, 370, 200, 30, 100];
+            solution(nums);
+        </script>
+    </body>
+</html>
