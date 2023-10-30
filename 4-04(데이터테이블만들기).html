@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>데이터테이블 만들기</title>
+    </head>
+    <body>
+        <input type="text" id="searchText" onkeydown="checkEnter(event)">
+        <input type="button" value="조회" onclick="doSearch()">
+        <script src="/scripts/4-04.user_data.js"></script>
+
+        <table id="tb" border="2">
+            <thead>
+                <tr>
+                    <th onclick="doSort('name')">Name</th>
+                    <th onclick="doSort('email')">Email</th>
+                    <th onclick="doSort('phone')">Phone</th>
+                    <th onclick="doSort('address')">Address</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <script>
+            var currentData = []; //정렬하기 위해서 현재 데이터 저장
+
+            function doSort(key){
+                // console.log(key);
+                currentData.sort(function(a,b){
+                    return a[key] > b[key] ? 1 : a[key] < b[key] ? -1 : 0;
+                });
+                renderTable(currentData);
+            }
+
+            function checkEnter(event){
+                if(event.keyCode === 13){
+                    doSearch();
+                }
+            }
+
+            //console.log(userList);      //출력값 확인
+            function doSearch(){
+                var search_text = document.getElementById("searchText").value;
+                // console.log(search_text);
+                if(search_text===""){ //전체 데이터 출력
+                    // console.log(userList);
+                    currentData = userList;
+                    renderTable(userList);
+                }else{ //사용자가 입력한 키워드에 해당하는 데이터만 출력
+                    var regExp = new RegExp(search_txt, "i");
+                    var data = userList.filter(item => {
+                    if ( regExp.test(item.name)) {
+                        return true;
+                    } else if ( regExp.test(item.email)) {
+                        return true;
+                    } else if ( regExp.test(item.phone)) {
+                        return true;
+                    } else if ( regExp.test(item.address)) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                })
+                renderTable(data);
+            }
+
+            }//doSearch()
+
+            function renderTable(data){
+                var h = [];
+                data.forEach(item => {
+                    h.push('<tr>');
+                        h.push(`<td> ${item.name} </td>`);
+                        h.push(`<td> ${item.email} </td>`);
+                        h.push(`<td> ${item.phone} </td>`);
+                        h.push(`<td> ${item.address} </td>`);
+                    h.push(`</tr>`);
+                });
+
+                // console.log(h.join(""));
+                document.querySelector("#tb>tbody").innerHTML = h.join("");
+            }
+        </script>
+
+        <!-- HTML은 Hyper Text Markup Language
+        Makrup이란 무엇일까?
+        자, 여기 '홍삼청' 이란 단어가 있다. 이것의 뜻이 무엇일까?
+        ...아무도 모른다.
+        그래서 알 수 있게 표시를 하는것이다.
+        <사람>홍삼청</사람> <음료수>홍삼청</음료수> 와 같이. -->
+    </body>
+</html>
