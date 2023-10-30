@@ -9,17 +9,24 @@
         //내 방식
         function solution(m, arr){
             let answer=0;
-            let total=0;
-            let cost = [];
-            let delivery = [];
-            for(let price of arr){
-                cost.push(price[0]);
-                delivery.push(price[1]);
-            }
-            cost[indexOf(Math.max(...delivery))] /= 2;
-            for(let i=0; i < cost.length; i++){
-                
-            }
+            let n = arr.length;
+            arr.sort((a, b) => (a[0] + a[1]) - (b[0] + b[1]));
+
+            for(let i = 0; i<n; i++){
+                let money = m - (arr[i][0] / 2) + arr[i][1];
+                let cnt = 1;
+
+                for(let j=0; j<n; j++){
+                    if(j !== i && arr[j][0] + arr[j][1] > money)break;
+                    if(j !== i && arr[j][0] + arr[j][1] <= money){
+                        money-= (arr[j][0] + arr[j][1]);
+                        cnt++;
+                    }// if
+                }//for j
+                answer = Math.max(answer,cnt);
+            }//for i
+
+            return answer;
         }
 
         let price = [
