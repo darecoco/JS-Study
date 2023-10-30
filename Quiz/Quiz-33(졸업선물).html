@@ -1,0 +1,39 @@
+<!-- 선생님은 올해 졸업하는 학생들에게 졸업 선물을 주려고 한다. 학생들에게 인터넷 쇼핑몰에서 각자 원하는 상품을 골라 그 상품의 가격과 배송비를 제출하라고 하였고,
+선생님이 가지고 있는 예산은 한정되어 있다. 현재 예산으로 최대 몇 명의 학생에게 선물을 사 줄 수 있는지 구하는 프로그램을 작성하시오.
+(단, 선생님은 단 하나의 상품은 50%할인(반 가격)해서 살 수 있는 쿠폰을 가지고 있고, 배송비는 할인에 포함되지 않는다.) -->
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        //내 방식
+        function solution(m, arr){
+            let answer=0;
+            let total=0;
+            let cost = [];
+            let delivery = [];
+            for(let price of arr){
+                cost.push(price[0]);
+                delivery.push(price[1]);
+            }
+            cost[indexOf(Math.max(...delivery))] /= 2;
+            for(let i=0; i < cost.length; i++){
+                
+            }
+        }
+
+        let price = [
+            [6, 6],
+            [2, 2],
+            [4, 3],
+            [4, 5],
+            [10, 3]
+        ];
+        console.log(solution(28, price));
+
+        //선생님 방식 : 저번과 같이 완전탐색 활용.
+        //쌤 왈 : 이런건 많이 풀어봐야 방향을 제대로 잡는다.
+        
+    </script>
+</body>
+</html>
