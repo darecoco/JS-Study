@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>K번째 큰 수</title>
+        <!-- 카드 n(임의로 10장)장을 세 장뽑아서(중복x) 다 더했을 때 k번째로 큰 수 반환 (33, 21, 21, 14, 12...) 일 때 k가 3이라면 14 반환. -->
+    </head>
+    <body>
+        <script>
+            function solution(n, a, arr){
+                //오랫만에 시간내로 완성한 내 코드
+                let answer = [];
+                let result = 0;
+                for(let i=0; i < arr.length-2; i++){
+                    for(let j = i+1; j < arr.length-1; j++){
+                        for(let k = j+1; k < arr.length; k++){
+                            let num = arr[i] + arr[j] + arr[k];
+                            answer.push(num);
+                        }
+                    }
+                }
+                answer.sort((a, b) => b - a);
+                let judge=0;
+                for(let i = 0; i < answer.length - 1; i++){
+                    if(judge === a){
+                        result = answer[i-1];
+                        break;
+                    }
+                    if(answer[i] !== answer[i+1]){
+                        judge++;
+                    }
+                }
+                // return result;
+
+                //쌤 버전
+                let answer2 = 0;
+                let temp = new Set();
+                for(let i=0; i < n-2; i++){
+                    for(let j = i+1; j < n-1; j++){
+                        for(let l = j+1; l< n; l++){
+                            temp.add(arr[i] + arr[j] + arr[l]);
+                        }
+                    }
+                }
+
+                let tmp = Array.from(temp).sort((a,b) => b-a);
+                answer2 = tmp[k-1];
+                return answer2;
+            }
+
+            let cards = [13, 15, 34, 23, 45, 65, 33, 11, 26, 42];
+            console.log(solution(10, 7, cards));
+
+
+        </script>
+    </body>
+</html>
