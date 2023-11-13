@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>공통 인수 찾기 - Two Pointers알고리즘</title>
+        <!-- 두 집합이 주어지면, 두 집합의 교집합 출력. (단, Two Pointers알고리즘 사용) -->
+    </head>
+    <body>
+        <script>
+            function solution(arr1, arr2){
+                let answer = [];
+                let n = arr1.length;
+                let m = arr2.length;
+                arr1.sort((a,b) => a - b);
+                arr2.sort((a,b) => a - b);
+                let p1 = p2 = 0;
+
+                while(p1<n && p2<m){
+                    if(arr1[p1] < arr2[p2]){
+                        p1++;
+                    }else if(arr1[p1] > arr2[p2]){
+                        p2++;
+                    }else{
+                        answer.push(arr1[p1++]);
+                        p2++;
+                    }
+                }
+                return answer;
+
+                //쌤 방식은 별 차이가 없어서 따로 쓰지 않음
+            }
+
+            let arr1 = [1,3,9,5,2];
+            let arr2 = [3,2,5,7,8];
+            console.log(solution(arr1, arr2));
+            console.log("20"-"22");
+        </script>
+    </body>
+</html>
