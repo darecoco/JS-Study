@@ -1,0 +1,38 @@
+N개로 이루어진 수열이 주어진다.<br/>
+이 수열에서 연속 부분 수열의 합이 특정 숫자 M이하가 되는 경우 몇 번 있는지 구하는 프로그램을 작성하시오.<br/>
+만약 N=5, M=5이고, 수열이 다음과 같다면<br/>
+1 3 1 2 3<br/>
+합이 5 이하가 되는 연속 부분 수열은<br/>
+{1}, {3}, {1}, {2}, {3}, {1, 3}, {3, 1}, {1, 2}, {2, 3}, {1, 3, 1}<br/>
+총 10개이다.  
+<html>
+    <head>
+        <title>연속 부분 수열2</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr, m){
+                let answer = 0;
+                let sum = lp = rp = 0;
+
+                for(rp = 0; rp < arr.length; rp++){
+                    sum += arr[rp];
+
+                    while(sum > m){
+                        sum -= arr[lp++];
+                    }
+
+                    answer += (rp - lp + 1);
+                }
+
+                return answer;
+            }
+
+            let n = [1, 3, 1, 2, 3];
+            let m = 5;
+
+            console.log(solution(n, m));
+
+        </script>
+    </body>
+</html>
