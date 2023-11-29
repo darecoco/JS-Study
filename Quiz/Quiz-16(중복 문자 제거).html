@@ -23,15 +23,16 @@
                     else
                         continue;
                 }
+                return res; //중복 문제 제거
 
-                // 특정 문자의 객수를 출력
+                // 특정 문자의 개수를 출력
                 let result = 0;
                 let pos = s.indexOf('s');
                 while(pos !== -1){
                     result++;
                     pos = s.indexOf('s', pos+1);
                 }
-                return result;
+                return result; //특정 문자 개수
             }
 
             console.log(solution("ksekkset"));
